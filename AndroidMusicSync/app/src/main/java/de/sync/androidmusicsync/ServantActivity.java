@@ -21,7 +21,7 @@ public class ServantActivity extends AppCompatActivity {
     }
 
     private void checkMicrophone() {
-        AudioDispatcher dispatcher = AudioDispatcherFactory.fromDefaultMicrophone(24000, 1024, 0);
+        AudioDispatcher dispatcher = AudioDispatcherFactory.fromDefaultMicrophone(22050, 1024, 0);
 
         PitchDetectionHandler pdh = new PitchDetectionHandler() {
             @Override
@@ -40,7 +40,7 @@ public class ServantActivity extends AppCompatActivity {
                 });
             }
         };
-        AudioProcessor p = new PitchProcessor(PitchProcessor.PitchEstimationAlgorithm.FFT_YIN, 24000, 1024, pdh);
+        AudioProcessor p = new PitchProcessor(PitchProcessor.PitchEstimationAlgorithm.FFT_YIN, 22050, 1024, pdh);
         dispatcher.addAudioProcessor(p);
         new Thread(dispatcher,"Audio Dispatcher").start();
     }
