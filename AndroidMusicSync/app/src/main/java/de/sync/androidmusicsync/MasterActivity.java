@@ -62,7 +62,7 @@ public class MasterActivity extends AppCompatActivity {
     }
 
     public void playSong(){
-        MediaPlayer player = MediaPlayer.create(app, R.raw.roccowbreakaleg);
+        MediaPlayer player = MediaPlayer.create(this, R.raw.roccowbreakaleg);
         player.start();
     }
 }
