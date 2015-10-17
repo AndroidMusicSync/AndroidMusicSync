@@ -16,10 +16,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openMaster(View view) {
         Intent intent = new Intent(this, MasterActivity.class);
+        startActivity(intent);
     }
 
     public void openServant(View view) {
         Intent intent = new Intent(this, ServantActivity.class);
-
+        startActivity(intent);
     }
 }
