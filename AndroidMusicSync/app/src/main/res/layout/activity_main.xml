@@ -56,7 +56,7 @@
             android:layout_height="76dp"
             android:id="@+id/icon"
             android:layout_gravity="center"
-            android:src="@drawable/MusicSync" />
+            android:src="@drawable/musicsync" />
 
     </FrameLayout>
 
