@@ -111,7 +111,7 @@ public class MusicSyncMainActivity extends Activity {
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
-        findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+        findViewById(R.id.mStartListening).setOnTouchListener(StartListening);
     }
 
     @Override
@@ -130,12 +130,15 @@ public class MusicSyncMainActivity extends Activity {
      * system UI. This is to prevent the jarring behavior of controls going away
      * while interacting with activity UI.
      */
-    View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
+    View.OnTouchListener StartListening = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
-            if (AUTO_HIDE) {
-                delayedHide(AUTO_HIDE_DELAY_MILLIS);
-            }
+            Thread lThread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+
+                }
+            });
             return false;
         }
     };
